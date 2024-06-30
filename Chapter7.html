@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 7: JavaScript Events</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #000000;
+            color: white;
+        }
+        h1, h2, h3 {
+            color: #ccc;
+        }
+        p {
+            margin: 10px 0;
+        }
+        ul {
+            margin: 10px 0 20px 20px;
+        }
+        li {
+            margin-bottom: 5px;
+        }
+        code {
+            background-color: #eaeaea;
+            padding: 2px 4px;
+            border-radius: 4px;
+            color: black;
+        }
+        pre {
+            background-color: #eaeaea;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+        a {
+            color: white;
+        }
+        .middle {
+margin:1rem auto;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html">Back to Index</a>
+    <h1>Chapter 7: JavaScript Events</h1>
+
+    <h2>Introduction to Events</h2>
+    <p>Events in JavaScript are actions or occurrences that happen in the browser, which the browser can detect and respond to. Examples of events include clicking a button, hovering over an element, pressing a key, etc.</p>
+
+    <h2>Event Handlers</h2>
+    <p>Event handlers are functions that are executed when an event occurs.</p>
+    <pre><code>// Example of an event handler
+let button = document.getElementById("myButton");
+
+button.addEventListener("click", function() {
+    console.log("Button clicked!");
+});</code></pre>
+
+    <h2>Types of Events</h2>
+    <p>There are many types of events in JavaScript, including:</p>
+    <ul>
+        <li><strong>Mouse Events:</strong> <code>click</code>, <code>mouseover</code>, <code>mouseout</code>, etc.</li>
+        <li><strong>Keyboard Events:</strong> <code>keydown</code>, <code>keyup</code>, <code>keypress</code>, etc.</li>
+        <li><strong>Form Events:</strong> <code>submit</code>, <code>change</code>, etc.</li>
+        <li><strong>Document/Window Events:</strong> <code>load</code>, <code>resize</code>, <code>scroll</code>, etc.</li>
+    </ul>
+
+    <h2>Event Listener</h2>
+    <p>The <code>addEventListener</code> method is used to attach an event handler to an element.</p>
+    <pre><code>// Example of adding an event listener
+let button = document.getElementById("myButton");
+
+button.addEventListener("click", function() {
+    console.log("Button clicked!");
+});</code></pre>
+
+    <h2>Event Object</h2>
+    <p>When an event occurs, the browser creates an event object that contains information about the event and its target.</p>
+    <pre><code>// Example of using the event object
+let link = document.getElementById("myLink");
+
+link.addEventListener("click", function(event) {
+    event.preventDefault(); // Prevents the default action of the event
+    console.log("Link clicked!");
+});</code></pre>
+
+    <h2>Handling Events Inline</h2>
+    <p>Events can also be handled inline within HTML attributes, but it's generally recommended to use <code>addEventListener</code> for better separation of concerns.</p>
+    <pre><code>&lt;button onclick="alert('Button clicked!')"&gt;Click Me&lt;/button&gt;</code></pre>
+
+    <h2>Advanced Topics</h2>
+    <p>In later sections, we will cover advanced topics such as event delegation and handling asynchronous events.</p>
+
+    <div class="middle">
+        <a href="chapter6.html">Previous</a>
+        <a href="chapter8.html">Next</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 1: Basics of JavaScript</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+          line-height: 1.6;
+          margin: 20px;
+          background-color: #000000;
+          color:white;
+        }
+        h1,
+        h2,
+        h3 {
+          color: #ccc;
+        }
+        p {
+          margin: 10px 0;
+        }
+        ul {
+          margin: 10px 0 20px 20px;
+        }
+        li {
+          margin-bottom: 5px;
+        }
+        code {
+          background-color: #eaeaea;
+          padding: 2px 4px;
+          border-radius: 4px;
+          color:black;
+        }
+        pre {
+          background-color: #eaeaea;
+          padding: 10px;
+          border-radius: 4px;
+          overflow-x: auto;
+        }
+        a{
+            color:white;
+        }
+        .middle {
+margin:1rem auto;            width:100%;
+            display:flex;
+            align-items: center;
+            justify-content: center;
+            gap:30px;
+        }
+      </style>
+</head>
+<body>
+    <a href="index.html">Back to Index</a>
+
+    <h1>Chapter 1: Basics of JavaScript</h1>
+    
+    <h2>What is JavaScript?</h2>
+    <p>JavaScript is a versatile and widely-used programming language primarily used for web development. It allows developers to create dynamic and interactive web pages. Originally developed by Netscape as a means to add dynamic and interactive elements to websites, JavaScript has evolved to become one of the three core technologies of web development, alongside HTML and CSS.</p>
+    <p>JavaScript is executed on the client side by the web browser, which means it can manipulate the content and behavior of web pages directly without requiring communication with the server. This makes it an essential tool for creating responsive and engaging user experiences.</p>
+    <p>Some key features of JavaScript include:</p>
+    <ul>
+        <li><strong>Lightweight and Interpreted:</strong> JavaScript is an interpreted language, meaning code can be executed without a prior compilation step. This makes it flexible and easy to work with.</li>
+        <li><strong>Event-Driven:</strong> JavaScript can respond to user actions like clicks, mouse movements, and keyboard inputs, making web pages interactive.</li>
+        <li><strong>Prototype-Based:</strong> JavaScript uses prototypes for inheritance, allowing objects to share properties and methods.</li>
+        <li><strong>First-Class Functions:</strong> Functions in JavaScript are treated as first-class objects, meaning they can be assigned to variables, passed as arguments, and returned from other functions.</li>
+    </ul>
+
+    <h2>What is a Document?</h2>
+    <p>In the context of web development, a document refers to the HTML document loaded into the web browser. This document forms the structure and content of the web page. The Document Object Model (DOM) represents this document as a hierarchical tree structure, where each element in the HTML is a node in the tree.</p>
+    <p>The <strong>DOM</strong> is an essential concept for JavaScript because it provides a way to access and manipulate the content, structure, and styles of web pages programmatically. Using JavaScript, developers can modify the DOM to change how a web page looks and behaves.</p>
+    <p>Some common operations that JavaScript can perform on the DOM include:</p>
+    <ul>
+        <li><strong>Selecting Elements:</strong> JavaScript can select HTML elements using methods like <code>document.getElementById()</code>, <code>document.getElementsByClassName()</code>, <code>document.getElementsByTagName()</code>, and <code>document.querySelector()</code>.</li>
+        <li><strong>Modifying Content:</strong> JavaScript can change the content of HTML elements using properties like <code>innerHTML</code> and <code>textContent</code>.</li>
+        <li><strong>Changing Styles:</strong> JavaScript can alter the styles of HTML elements using the <code>style</code> property.</li>
+        <li><strong>Handling Events:</strong> JavaScript can respond to user interactions by attaching event listeners to HTML elements using methods like <code>addEventListener()</code>.</li>
+    </ul>
+    <p>Here's a simple example demonstrating some DOM manipulation:</p>
+    <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;DOM Manipulation Example&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1 id="title"&gt;Hello, World!&lt;/h1&gt;
+    &lt;button id="changeTitleButton"&gt;Change Title&lt;/button&gt;
+
+    &lt;script&gt;
+        // Selecting the elements
+        const title = document.getElementById('title');
+        const button = document.getElementById('changeTitleButton');
+
+        // Adding an event listener to the button
+        button.addEventListener('click', function() {
+            // Changing the content and style of the title
+            title.textContent = 'Title Changed!';
+            title.style.color = 'red';
+        });
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+    <p>In this example, when the button is clicked, the text content and color of the heading are changed using JavaScript.</p>
+  
+    <div class="middle">
+        <a href="index.html">Previous</a> |
+        <a href="Chapter2.html">Next</a>
+    </div>
+  
+</body>
+</html>

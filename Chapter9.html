@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 9: JavaScript Numbers, Number Properties, and Number Methods</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #000;
+            color: #fff;
+        }
+        h1, h2, h3 {
+            color: #ccc;
+        }
+        p {
+            margin: 10px 0;
+        }
+        ul {
+            margin: 10px 0 20px 20px;
+        }
+        li {
+            margin-bottom: 5px;
+        }
+        code {
+            background-color: #eaeaea;
+            padding: 2px 4px;
+            border-radius: 4px;
+            color: #000;
+        }
+        pre {
+            background-color: #eaeaea;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+        a {
+            color: #fff;
+        }
+        .middle {
+margin:1rem auto;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Back to Index</a>
+    </nav>
+    <main>
+        <h1>Chapter 9: JavaScript Numbers, Number Properties, and Number Methods</h1>
+
+        <section>
+            <h2>Introduction to Numbers</h2>
+            <p>In JavaScript, numbers are a data type that includes both integer and floating-point values. The number type also supports special values like <code>NaN</code> (Not a Number), <code>Infinity</code>, and <code>-Infinity</code>.</p>
+        </section>
+
+        <section>
+            <h2>Number Properties</h2>
+            <p>Numbers have properties that provide information about their characteristics.</p>
+            <ul>
+                <li><code>Number.MAX_VALUE:</code> The largest possible value a number in JavaScript can have: approximately 1.79E+308.</li>
+                <li><code>Number.MIN_VALUE:</code> The smallest possible value a number in JavaScript can have: approximately 5e-324.</li>
+                <li><code>Number.POSITIVE_INFINITY:</code> Represents infinity.</li>
+                <li><code>Number.NEGATIVE_INFINITY:</code> Represents negative infinity.</li>
+                <li><code>Number.NaN:</code> Represents "Not-a-Number".</li>
+                <li><code>Number.EPSILON:</code> The difference between 1 and the smallest value greater than 1 that is representable.</li>
+                <li><code>Number.MIN_SAFE_INTEGER:</code> The minimum safe integer in JavaScript: -(2^53 - 1).</li>
+                <li><code>Number.MAX_SAFE_INTEGER:</code> The maximum safe integer in JavaScript: 2^53 - 1.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Number Methods</h2>
+            <p>JavaScript provides various built-in methods to work with numbers.</p>
+
+            <h3>1. Conversion Methods</h3>
+            <p><code>Number(value):</code> Converts a value to a number.</p>
+            <p><code>parseFloat(string):</code> Parses a string and returns a floating-point number.</p>
+            <p><code>parseInt(string, radix):</code> Parses a string and returns an integer of the specified radix (base).</p>
+            <pre><code>// Example of using conversion methods
+let num1 = Number("123");
+console.log(num1); // Output: 123
+
+let num2 = parseFloat("123.45");
+console.log(num2); // Output: 123.45
+
+let num3 = parseInt("101", 2);
+console.log(num3); // Output: 5</code></pre>
+
+            <h3>2. Checking and Comparing Methods</h3>
+            <p><code>Number.isNaN(value):</code> Determines whether the passed value is NaN.</p>
+            <p><code>Number.isFinite(value):</code> Determines whether the passed value is a finite number.</p>
+            <p><code>Number.isInteger(value):</code> Determines whether the passed value is an integer.</p>
+            <p><code>Number.isSafeInteger(value):</code> Determines whether the passed value is a safe integer.</p>
+            <pre><code>// Example of using checking and comparing methods
+console.log(Number.isNaN(NaN)); // Output: true
+console.log(Number.isFinite(123)); // Output: true
+console.log(Number.isInteger(123.45)); // Output: false
+console.log(Number.isSafeInteger(9007199254740991)); // Output: true</code></pre>
+
+            <h3>3. Formatting Methods</h3>
+            <p><code>toFixed(digits):</code> Formats a number using fixed-point notation.</p>
+            <p><code>toExponential(digits):</code> Formats a number in exponential notation.</p>
+            <p><code>toPrecision(precision):</code> Formats a number to a specified precision.</p>
+            <pre><code>// Example of using formatting methods
+let num = 123.456;
+
+console.log(num.toFixed(2)); // Output: 123.46
+console.log(num.toExponential(2)); // Output: 1.23e+2
+console.log(num.toPrecision(4)); // Output: 123.5</code></pre>
+
+            <h3>4. Miscellaneous Methods</h3>
+            <p><code>valueOf():</code> Returns the primitive value of a Number object.</p>
+            <pre><code>// Example of using valueOf method
+let numObj = new Number(123);
+console.log(numObj.valueOf()); // Output: 123</code></pre>
+        </section>
+
+        <section>
+            <h2>BigInt</h2>
+            <p>BigInt is a built-in object that provides a way to represent whole numbers larger than <code>Number.MAX_SAFE_INTEGER</code>. BigInts are created by appending <code>n</code> to the end of an integer or by calling the <code>BigInt()</code> function.</p>
+
+            <h3>1. Creating BigInt</h3>
+            <p><code>BigInt(value):</code> Converts a value to a BigInt.</p>
+            <pre><code>// Example of creating BigInt
+let bigInt1 = BigInt(12345678901234567890);
+let bigInt2 = 12345678901234567890n;
+console.log(bigInt1); // Output: 12345678901234567890n
+console.log(bigInt2); // Output: 12345678901234567890n</code></pre>
+
+            <h3>2. BigInt Methods</h3>
+            <p>BigInt inherits methods from the Number object.</p>
+            <ul>
+                <li><code>toLocaleString(locale, options):</code> Returns a string with a language-sensitive representation of this number.</li>
+                <li><code>toString(radix):</code> Returns a string representing the specified BigInt object in the specified radix (base).</li>
+                <li><code>valueOf():</code> Returns the primitive value of the BigInt object.</li>
+            </ul>
+            <pre><code>// Example of using BigInt methods
+let bigInt = 12345678901234567890n;
+
+console.log(bigInt.toString(16)); // Output: ab54a98ceb1f0ad2
+console.log(bigInt.valueOf()); // Output: 12345678901234567890n</code></pre>
+        </section>
+
+        <section>
+            <h2>Advanced Topics</h2>
+            <p>In later sections, we will cover advanced topics such as scientific notation and precision handling in JavaScript.</p>
+        </section>
+
+        <div class="middle">
+            <a href="Chapter8.html">Previous</a>
+            <a href="Chapter10.html">Next</a>
+        </div>
+    </main>
+</body>
+</html>

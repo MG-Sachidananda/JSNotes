@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 3: JavaScript Data Types</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+          line-height: 1.6;
+          margin: 20px;
+          background-color: #000000;
+          color:white;
+        }
+        h1,
+        h2,
+        h3 {
+          color: #ccc;
+        }
+        p {
+          margin: 10px 0;
+        }
+        ul {
+          margin: 10px 0 20px 20px;
+        }
+        li {
+          margin-bottom: 5px;
+        }
+        code {
+          background-color: #eaeaea;
+          padding: 2px 4px;
+          border-radius: 4px;
+          color:black;
+        }
+        pre {
+          background-color: #eaeaea;
+          padding: 10px;
+          border-radius: 4px;
+          overflow-x: auto;
+        }
+        a{
+            color:white;
+        }
+        .middle {
+margin:1rem auto;            width:100%;
+            display:flex;
+            align-items: center;
+            justify-content: center;
+            gap:30px;
+        }
+      </style>
+</head>
+<body>
+    <a href="index.html">Back to Index</a>
+
+    <h1>Chapter 3: JavaScript Data Types</h1>
+    
+    <h2>Introduction</h2>
+    <p>In JavaScript, data types are categorized into two main types: primitive and object types. Understanding these data types is essential for effective programming.</p>
+    
+    <h2>Primitive Data Types</h2>
+    <p>Primitive data types are the most basic data types in JavaScript. They include:</p>
+    <ul>
+        <li><strong>String:</strong> Represents textual data. Strings are created using single quotes (<code>' '</code>), double quotes (<code>" "</code>), or backticks (<code>` `</code>).</li>
+        <li><strong>Number:</strong> Represents both integer and floating-point numbers.</li>
+        <li><strong>Boolean:</strong> Represents logical entities and can have two values: <code>true</code> or <code>false</code>.</li>
+        <li><strong>Null:</strong> Represents the intentional absence of any object value. It is a special keyword and evaluates to <code>null</code>.</li>
+        <li><strong>Undefined:</strong> Indicates that a variable has not been assigned a value. Variables are initialized with <code>undefined</code> by default.</li>
+        <li><strong>Symbol:</strong> Represents a unique and immutable value, primarily used for object property keys.</li>
+        <li><strong>BigInt:</strong> Represents whole numbers larger than <code>2^53 - 1</code> (the largest number JavaScript can safely represent with the <code>Number</code> primitive).</li>
+    </ul>
+    
+    <h3>Examples of Primitive Data Types</h3>
+    <pre><code>// String
+let name = "Alice";
+let greeting = `Hello, ${name}!`;
+
+// Number
+let age = 30;
+let temperature = 98.6;
+
+// Boolean
+let isActive = true;
+let hasLicense = false;
+
+// Null
+let emptyValue = null;
+
+// Undefined
+let uninitialized;
+
+// Symbol
+let sym = Symbol('description');
+
+// BigInt
+let bigIntValue = 1234567890123456789012345678901234567890n;</code></pre>
+
+    <h2>Object Types</h2>
+    <p>Object types are more complex and can store collections of data and more complex entities. The main types of objects in JavaScript include:</p>
+    <ul>
+        <li><strong>Object:</strong> A collection of properties, where each property is a key-value pair.</li>
+        <li><strong>Array:</strong> An ordered list of values, indexed by numbers.</li>
+        <li><strong>Function:</strong> A block of code designed to perform a particular task. Functions themselves are objects in JavaScript.</li>
+        <li><strong>Date:</strong> Represents dates and times.</li>
+        <li><strong>RegExp:</strong> Represents regular expressions, used for pattern matching in strings.</li>
+        <li><strong>Map:</strong> A collection of keyed data items, where keys can be of any type.</li>
+        <li><strong>Set:</strong> A collection of unique values, where each value may occur only once.</li>
+    </ul>
+    
+    <h3>Examples of Object Types</h3>
+    <pre><code>// Object
+let person = {
+    name: "Alice",
+    age: 30,
+    isActive: true
+};
+
+// Array
+let numbers = [1, 2, 3, 4, 5];
+
+// Function
+function greet(name) {
+    return `Hello, ${name}!`;
+}
+
+// Date
+let now = new Date();
+
+// RegExp
+let pattern = /ab+c/;
+
+// Map
+let map = new Map();
+map.set('name', 'Alice');
+map.set('age', 30);
+
+// Set
+let set = new Set();
+set.add(1);
+set.add(2);
+set.add(3);</code></pre>
+    
+
+<div class="middle">
+    <a href="Chapter2.html">Previous</a> |
+    <a href="Chapter4.html">Next</a>
+</div>
+
+
+</body>
+</html>

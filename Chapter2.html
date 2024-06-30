@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 2: Basics of let, const, and var</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+          line-height: 1.6;
+          margin: 20px;
+          background-color: #000000;
+          color:white;
+        }
+        h1,
+        h2,
+        h3 {
+          color: #ccc;
+        }
+        p {
+          margin: 10px 0;
+        }
+        ul {
+          margin: 10px 0 20px 20px;
+        }
+        li {
+          margin-bottom: 5px;
+        }
+        code {
+          background-color: #eaeaea;
+          padding: 2px 4px;
+          border-radius: 4px;
+          color:black;
+        }
+        pre {
+          background-color: #eaeaea;
+          padding: 10px;
+          border-radius: 4px;
+          overflow-x: auto;
+        }
+        a{
+            color:white;
+        }
+        .middle {
+margin:1rem auto;            width:100%;
+            display:flex;
+            align-items: center;
+            justify-content: center;
+            gap:30px;
+        }
+      </style>
+</head>
+<body>
+    <a href="index.html">Back to Index</a>
+
+    <h1>Chapter 2: Basics of let, const, and var</h1>
+    
+    <h2>Introduction to Variable Declarations in JavaScript</h2>
+    <p>In JavaScript, variables are used to store data values. There are three keywords to declare variables: <code>var</code>, <code>let</code>, and <code>const</code>. Each has its own characteristics and use cases.</p>
+    
+    <h2><code>var</code></h2>
+    <p>The <code>var</code> keyword is the oldest way to declare a variable in JavaScript. Variables declared with <code>var</code> have function scope or global scope, depending on where they are declared.</p>
+    <p>Characteristics of <code>var</code>:</p>
+    <ul>
+        <li><strong>Function Scope:</strong> If a <code>var</code> variable is declared inside a function, it is only accessible within that function.</li>
+        <li><strong>Global Scope:</strong> If a <code>var</code> variable is declared outside of any function, it becomes a global variable and is accessible throughout the entire script.</li>
+        <li><strong>Hoisting:</strong> Variables declared with <code>var</code> are hoisted to the top of their scope, meaning they can be used before they are declared, but their value will be <code>undefined</code> until the declaration is encountered.</li>
+    </ul>
+    <pre><code>function exampleFunction() {
+    console.log(x); // undefined
+    var x = 10;
+    console.log(x); // 10
+}
+exampleFunction();</code></pre>
+    
+    <h2><code>let</code></h2>
+    <p>The <code>let</code> keyword, introduced in ECMAScript 6 (ES6), is used to declare block-scoped variables. Variables declared with <code>let</code> are only accessible within the block (curly braces) in which they are defined.</p>
+    <p>Characteristics of <code>let</code>:</p>
+    <ul>
+        <li><strong>Block Scope:</strong> <code>let</code> variables are confined to the block in which they are declared.</li>
+        <li><strong>No Hoisting:</strong> Unlike <code>var</code>, <code>let</code> variables are not hoisted to the top of their scope. They cannot be accessed before declaration.</li>
+        <li><strong>No Re-declaration:</strong> <code>let</code> variables cannot be re-declared within the same scope.</li>
+    </ul>
+    <pre><code>function exampleBlockScope() {
+    if (true) {
+        let y = 20;
+        console.log(y); // 20
+    }
+    console.log(y); // ReferenceError: y is not defined
+}
+exampleBlockScope();</code></pre>
+    
+    <h2><code>const</code></h2>
+    <p>The <code>const</code> keyword, also introduced in ES6, is used to declare variables that are meant to be constant. These variables cannot be reassigned after their initial declaration.</p>
+    <p>Characteristics of <code>const</code>:</p>
+    <ul>
+        <li><strong>Block Scope:</strong> Like <code>let</code>, <code>const</code> variables are block-scoped.</li>
+        <li><strong>No Re-assignment:</strong> <code>const</code> variables cannot be reassigned after their initial assignment.</li>
+        <li><strong>No Hoisting:</strong> <code>const</code> variables are not hoisted to the top of their scope and must be declared before use.</li>
+    </ul>
+    <pre><code>function exampleConst() {
+    const z = 30;
+    console.log(z); // 30
+    z = 40; // TypeError: Assignment to constant variable.
+}
+exampleConst();</code></pre>
+    <p>It's important to note that while the value of a <code>const</code> variable cannot be changed, if the variable is an object or array, the properties or elements of that object or array can be modified.</p>
+    <pre><code>const myArray = [1, 2, 3];
+myArray.push(4); // Allowed
+console.log(myArray); // [1, 2, 3, 4]</code></pre>
+
+<div class="middle">
+    <a href="Chapter1.html">Previous</a> |
+    <a href="Chapter3.html">Next</a>
+</div>
+
+
+</body>
+</html>

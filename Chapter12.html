@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 12: JavaScript Conditionals</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #000;
+            color: #fff;
+        }
+        h1, h2, h3 {
+            color: #ccc;
+        }
+        p {
+            margin: 10px 0;
+        }
+        ul {
+            margin: 10px 0 20px 20px;
+        }
+        li {
+            margin-bottom: 5px;
+        }
+        code {
+            background-color: #eaeaea;
+            padding: 2px 4px;
+            border-radius: 4px;
+            color: #000;
+        }
+        pre {
+            background-color: #eaeaea;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+        a {
+            color: #fff;
+        }
+        .middle {
+margin:1rem auto;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Back to Index</a>
+    </nav>
+    <main>
+        <h1>Chapter 12: JavaScript Conditionals</h1>
+
+        <section>
+            <h2>Introduction to Conditionals</h2>
+            <p>Conditionals in JavaScript are used to perform different actions based on different conditions. They help control the flow of a program by executing certain code only if specific conditions are met.</p>
+        </section>
+
+        <section>
+            <h2>The <code>if</code> Statement</h2>
+            <p>The <code>if</code> statement is used to execute a block of code if a specified condition evaluates to <code>true</code>.</p>
+            <pre><code>let age = 18;
+if (age >= 18) {
+    console.log("You are an adult.");
+}</code></pre>
+        </section>
+
+        <section>
+            <h2>The <code>if...else</code> Statement</h2>
+            <p>The <code>if...else</code> statement is used to execute one block of code if a condition is <code>true</code> and another block of code if the condition is <code>false</code>.</p>
+            <pre><code>let age = 16;
+if (age >= 18) {
+    console.log("You are an adult.");
+} else {
+    console.log("You are a minor.");
+}</code></pre>
+        </section>
+
+        <section>
+            <h2>The <code>else if</code> Statement</h2>
+            <p>The <code>else if</code> statement is used to specify a new condition to test if the first condition is <code>false</code>.</p>
+            <pre><code>let age = 20;
+if (age < 13) {
+    console.log("You are a child.");
+} else if (age < 20) {
+    console.log("You are a teenager.");
+} else {
+    console.log("You are an adult.");
+}</code></pre>
+        </section>
+
+        <section>
+            <h2>The <code>switch</code> Statement</h2>
+            <p>The <code>switch</code> statement is used to perform different actions based on different conditions. It is often used as an alternative to multiple <code>if...else if</code> statements.</p>
+            <pre><code>let day = 3;
+switch (day) {
+    case 1:
+        console.log("Monday");
+        break;
+    case 2:
+        console.log("Tuesday");
+        break;
+    case 3:
+        console.log("Wednesday");
+        break;
+    case 4:
+        console.log("Thursday");
+        break;
+    case 5:
+        console.log("Friday");
+        break;
+    case 6:
+        console.log("Saturday");
+        break;
+    case 7:
+        console.log("Sunday");
+        break;
+    default:
+        console.log("Invalid day");
+}</code></pre>
+            <p>In a <code>switch</code> statement, the <code>break</code> keyword is used to stop the execution of code within the switch block. If <code>break</code> is omitted, the next case will be executed regardless of the condition.</p>
+        </section>
+
+        <section>
+            <h2>Practical Examples</h2>
+            <p>Conditionals are fundamental for making decisions in code. Here are some practical examples:</p>
+            <pre><code>// Example 1: Check if a number is positive, negative, or zero
+let number = 0;
+if (number > 0) {
+    console.log("Positive");
+} else if (number < 0) {
+    console.log("Negative");
+} else {
+    console.log("Zero");
+}
+
+// Example 2: Determine the grade based on score
+let score = 85;
+let grade;
+if (score >= 90) {
+    grade = 'A';
+} else if (score >= 80) {
+    grade = 'B';
+} else if (score >= 70) {
+    grade = 'C';
+} else if (score >= 60) {
+    grade = 'D';
+} else {
+    grade = 'F';
+}
+console.log("Grade: " + grade);
+
+// Example 3: Switch statement for fruit selection
+let fruit = "apple";
+switch (fruit) {
+    case "apple":
+        console.log("Apples are $1.50 per pound.");
+        break;
+    case "banana":
+        console.log("Bananas are $0.50 per pound.");
+        break;
+    case "cherry":
+        console.log("Cherries are $3.00 per pound.");
+        break;
+    default:
+        console.log("Sorry, we are out of " + fruit + ".");
+}</code></pre>
+        </section>
+
+        <section>
+            <h2>Advanced Topics</h2>
+            <p>In later sections, we will cover advanced topics such as nested conditionals, ternary operators, and conditional expressions.</p>
+        </section>
+
+        <div class="middle">
+            <a href="chapter11.html">Previous</a>
+            <a href="chapter13.html">Next</a>
+        </div>
+    </main>
+</body>
+</html>

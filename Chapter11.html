@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 11: JavaScript Booleans and Comparisons</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #000;
+            color: #fff;
+        }
+        h1, h2, h3 {
+            color: #ccc;
+        }
+        p {
+            margin: 10px 0;
+        }
+        ul {
+            margin: 10px 0 20px 20px;
+        }
+        li {
+            margin-bottom: 5px;
+        }
+        code {
+            background-color: #eaeaea;
+            padding: 2px 4px;
+            border-radius: 4px;
+            color: #000;
+        }
+        pre {
+            background-color: #eaeaea;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+        a {
+            color: #fff;
+        }
+        .middle {
+margin:1rem auto;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Back to Index</a>
+    </nav>
+    <main>
+        <h1>Chapter 11: JavaScript Booleans and Comparisons</h1>
+
+        <section>
+            <h2>Introduction to Booleans</h2>
+            <p>In JavaScript, a boolean represents one of two values: <code>true</code> or <code>false</code>. Booleans are often used in conditional testing.</p>
+        </section>
+
+        <section>
+            <h2>Boolean Values</h2>
+            <p>Boolean values are typically the result of comparisons and logical operations.</p>
+            <pre><code>let isTrue = true;
+let isFalse = false;
+
+console.log(isTrue); // Output: true
+console.log(isFalse); // Output: false</code></pre>
+        </section>
+
+        <section>
+            <h2>Boolean Conversion</h2>
+            <p>JavaScript can convert values of other types to boolean values using the <code>Boolean()</code> function or double negation <code>!!</code>.</p>
+            <pre><code>console.log(Boolean(0)); // Output: false
+console.log(Boolean(1)); // Output: true
+console.log(Boolean("")); // Output: false
+console.log(Boolean("hello")); // Output: true
+console.log(!!0); // Output: false
+console.log(!!1); // Output: true</code></pre>
+        </section>
+
+        <section>
+            <h2>Truthy and Falsy Values</h2>
+            <p>In JavaScript, certain values are considered "truthy" or "falsy" when evaluated in a boolean context.</p>
+            <h3>Falsy Values</h3>
+            <p>The following values are considered falsy:</p>
+            <ul>
+                <li><code>false</code></li>
+                <li><code>0</code> (zero)</li>
+                <li><code>""</code> or <code>''</code> (empty string)</li>
+                <li><code>null</code></li>
+                <li><code>undefined</code></li>
+                <li><code>NaN</code> (Not-a-Number)</li>
+            </ul>
+            <pre><code>console.log(Boolean(false)); // Output: false
+console.log(Boolean(0)); // Output: false
+console.log(Boolean("")); // Output: false
+console.log(Boolean(null)); // Output: false
+console.log(Boolean(undefined)); // Output: false
+console.log(Boolean(NaN)); // Output: false</code></pre>
+            <h3>Truthy Values</h3>
+            <p>All values that are not falsy are considered truthy. Some examples include:</p>
+            <ul>
+                <li><code>true</code></li>
+                <li>Non-zero numbers (e.g., <code>42</code>)</li>
+                <li>Non-empty strings (e.g., <code>"hello"</code>)</li>
+                <li>Objects (e.g., <code>{}</code>)</li>
+                <li>Arrays (e.g., <code>[]</code>)</li>
+            </ul>
+            <pre><code>console.log(Boolean(true)); // Output: true
+console.log(Boolean(42)); // Output: true
+console.log(Boolean("hello")); // Output: true
+console.log(Boolean({})); // Output: true
+console.log(Boolean([])); // Output: true</code></pre>
+        </section>
+
+        <section>
+            <h2>Comparison Operators</h2>
+            <p>Comparison operators are used to compare two values. They return a boolean value.</p>
+            <ul>
+                <li><code>==</code> (equal to)</li>
+                <li><code>===</code> (strict equal to)</li>
+                <li><code>!=</code> (not equal to)</li>
+                <li><code>!==</code> (strict not equal to)</li>
+                <li><code>&gt;</code> (greater than)</li>
+                <li><code>&gt;=</code> (greater than or equal to)</li>
+                <li><code>&lt;</code> (less than)</li>
+                <li><code>&lt;=</code> (less than or equal to)</li>
+            </ul>
+            <pre><code>let a = 5;
+let b = 10;
+
+console.log(a == b); // Output: false
+console.log(a === b); // Output: false
+console.log(a != b); // Output: true
+console.log(a !== b); // Output: true
+console.log(a > b); // Output: false
+console.log(a >= b); // Output: false
+console.log(a < b); // Output: true
+console.log(a <= b); // Output: true</code></pre>
+        </section>
+
+        <section>
+            <h2>Logical Operators</h2>
+            <p>Logical operators are used to combine multiple boolean expressions.</p>
+            <ul>
+                <li><code>&&</code> (logical AND)</li>
+                <li><code>||</code> (logical OR)</li>
+                <li><code>!</code> (logical NOT)</li>
+            </ul>
+            <pre><code>let x = true;
+let y = false;
+
+console.log(x && y); // Output: false
+console.log(x || y); // Output: true
+console.log(!x); // Output: false</code></pre>
+        </section>
+
+        <section>
+            <h2>Conditional (Ternary) Operator</h2>
+            <p>The conditional operator (<code>?</code>) assigns a value to a variable based on a condition.</p>
+            <pre><code>let age = 18;
+let canVote = (age >= 18) ? "Yes" : "No";
+console.log(canVote); // Output: Yes</code></pre>
+        </section>
+
+        <section>
+            <h2>Practical Examples</h2>
+            <p>Booleans and comparisons are fundamental in controlling the flow of a program.</p>
+            <pre><code>let age = 20;
+if (age >= 18) {
+    console.log("You are an adult.");
+} else {
+    console.log("You are a minor.");
+}
+
+let isMember = true;
+let discount = isMember ? 10 : 0;
+console.log("Discount: " + discount + "%");</code></pre>
+        </section>
+
+        <section>
+            <h2>Advanced Topics</h2>
+            <p>In later sections, we will cover advanced topics such as truthy and falsy values, and short-circuit evaluation.</p>
+        </section>
+
+        <div class="middle">
+            <a href="chapter10.html">Previous</a>
+            <a href="chapter12.html">Next</a>
+        </div>
+    </main>
+</body>
+</html>

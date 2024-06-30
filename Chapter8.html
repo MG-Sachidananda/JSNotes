@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 8: JavaScript Strings, Template Strings, Properties, and Methods</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #000;
+            color: #fff;
+        }
+        h1, h2, h3 {
+            color: #ccc;
+        }
+        p {
+            margin: 10px 0;
+        }
+        ul {
+            margin: 10px 0 20px 20px;
+        }
+        li {
+            margin-bottom: 5px;
+        }
+        code {
+            background-color: #eaeaea;
+            padding: 2px 4px;
+            border-radius: 4px;
+            color: #000;
+        }
+        pre {
+            background-color: #eaeaea;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+        a {
+            color: #fff;
+        }
+        .middle {
+margin:1rem auto;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Back to Index</a>
+    </nav>
+    <main>
+        <h1>Chapter 8: JavaScript Strings, Template Strings, Properties, and Methods</h1>
+
+        <section>
+            <h2>Introduction to Strings</h2>
+            <p>In JavaScript, a string is a sequence of characters enclosed within single quotes <code>''</code> or double quotes <code>""</code>. Strings are immutable, meaning their content cannot be changed once created.</p>
+        </section>
+
+        <section>
+            <h2>String Properties</h2>
+            <p>Strings have properties that allow you to access information about the string.</p>
+            <ul>
+                <li><code>length:</code> Returns the length of the string.</li>
+            </ul>
+            <pre><code>// Example of using string property
+let message = "Hello, World!";
+console.log(message.length); // Output: 13</code></pre>
+        </section>
+
+        <section>
+            <h2>String Methods</h2>
+            <p>JavaScript provides many built-in methods to manipulate strings.</p>
+
+            <h3>1. Concatenation</h3>
+            <p><code>concat():</code> Combines two or more strings and returns a new string.</p>
+            <pre><code>// Example of using concat method
+let str1 = "Hello";
+let str2 = "World";
+let greeting = str1.concat(", ", str2);
+console.log(greeting); // Output: Hello, World</code></pre>
+
+            <h3>2. Accessing Characters</h3>
+            <p><code>charAt(index):</code> Returns the character at the specified index.</p>
+            <pre><code>// Example of using charAt method
+let str = "JavaScript";
+console.log(str.charAt(0)); // Output: J</code></pre>
+
+            <h3>3. Substrings</h3>
+            <p><code>substring(startIndex, endIndex):</code> Returns the substring between startIndex and endIndex (endIndex not included).</p>
+            <pre><code>// Example of using substring method
+let str = "JavaScript";
+console.log(str.substring(0, 4)); // Output: Java</code></pre>
+
+            <h3>4. Searching</h3>
+            <p><code>indexOf(searchValue):</code> Returns the index of the first occurrence of searchValue within the string.</p>
+            <p><code>lastIndexOf(searchValue):</code> Returns the index of the last occurrence of searchValue within the string.</p>
+            <pre><code>// Example of using indexOf and lastIndexOf methods
+let str = "Hello, World!";
+console.log(str.indexOf("o")); // Output: 4
+console.log(str.lastIndexOf("o")); // Output: 8</code></pre>
+
+            <h3>5. Case Conversion</h3>
+            <p><code>toLowerCase():</code> Converts a string to lowercase.</p>
+            <p><code>toUpperCase():</code> Converts a string to uppercase.</p>
+            <pre><code>// Example of using toLowerCase and toUpperCase methods
+let str = "Hello, World!";
+console.log(str.toLowerCase()); // Output: hello, world!
+console.log(str.toUpperCase()); // Output: HELLO, WORLD!</code></pre>
+
+            <h3>6. Trimming</h3>
+            <p><code>trim():</code> Removes whitespace from both ends of a string.</p>
+            <p><code>trimStart():</code> Removes whitespace from the start of a string.</p>
+            <p><code>trimEnd():</code> Removes whitespace from the end of a string.</p>
+            <pre><code>// Example of using trim, trimStart, and trimEnd methods
+let str = "   Hello, World!   ";
+console.log(str.trim()); // Output: Hello, World!
+console.log(str.trimStart()); // Output: "Hello, World!   "
+console.log(str.trimEnd()); // Output: "   Hello, World!"</code></pre>
+
+            <h3>7. Splitting</h3>
+            <p><code>split(separator):</code> Splits a string into an array of substrings using the specified separator.</p>
+            <pre><code>// Example of using split method
+let str = "Hello, World!";
+let words = str.split(", ");
+console.log(words); // Output: ["Hello", "World!"]</code></pre>
+
+            <h3>8. Replacing</h3>
+            <p><code>replace(searchValue, newValue):</code> Replaces the first occurrence of searchValue with newValue.</p>
+            <p><code>replaceAll(searchValue, newValue):</code> Replaces all occurrences of searchValue with newValue.</p>
+            <pre><code>// Example of using replace and replaceAll methods
+let str = "Hello, World!";
+console.log(str.replace("World", "JavaScript")); // Output: Hello, JavaScript!
+console.log(str.replaceAll("o", "O")); // Output: HellO, WOrld!</code></pre>
+
+            <h3>9. Padding</h3>
+            <p><code>padStart(targetLength, padString):</code> Pads the current string with a specified string from the start to reach the target length.</p>
+            <p><code>padEnd(targetLength, padString):</code> Pads the current string with a specified string from the end to reach the target length.</p>
+            <pre><code>// Example of using padStart and padEnd methods
+let str = "5";
+console.log(str.padStart(3, "0")); // Output: 005
+console.log(str.padEnd(3, "0")); // Output: 500</code></pre>
+
+            <h3>10. Repeating</h3>
+            <p><code>repeat(count):</code> Returns a new string with a specified number of copies of the original string.</p>
+            <pre><code>// Example of using repeat method
+let str = "Hello";
+console.log(str.repeat(3)); // Output: HelloHelloHello</code></pre>
+
+            <h3>11. Checking String Content</h3>
+            <p><code>includes(searchValue):</code> Checks if the string contains searchValue.</p>
+            <p><code>startsWith(searchValue):</code> Checks if the string starts with searchValue.</p>
+            <p><code>endsWith(searchValue):</code> Checks if the string ends with searchValue.</p>
+            <pre><code>// Example of using includes, startsWith, and endsWith methods
+let str = "Hello, World!";
+console.log(str.includes("World")); // Output: true
+console.log(str.startsWith("Hello")); // Output: true
+console.log(str.endsWith("!")); // Output: true</code></pre>
+            
+            <h3>12. Extracting Parts of a String</h3>
+            <p><code>slice(startIndex, endIndex):</code> Extracts a section of a string and returns it as a new string. Negative indices count back from the end of the string.</p>
+            <pre><code>// Example of using slice method
+let str = "Hello, World!";
+console.log(str.slice(7, 12)); // Output: World
+console.log(str.slice(-6, -1)); // Output: World</code></pre>
+        </section>
+
+        <section>
+            <h2>Advanced Topics</h2>
+            <p>In later sections, we will cover advanced topics such as regular expressions and internationalization in strings.</p>
+        </section>
+
+        <div class="middle">
+            <a href="chapter7.html">Previous</a>
+            <a href="chapter9.html">Next</a>
+        </div>
+    </main>
+</body>
+</html>

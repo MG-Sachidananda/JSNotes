@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 10: JavaScript Arrays</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #000;
+            color: #fff;
+        }
+        h1, h2, h3 {
+            color: #ccc;
+        }
+        p {
+            margin: 10px 0;
+        }
+        ul {
+            margin: 10px 0 20px 20px;
+        }
+        li {
+            margin-bottom: 5px;
+        }
+        code {
+            background-color: #eaeaea;
+            padding: 2px 4px;
+            border-radius: 4px;
+            color: #000;
+        }
+        pre {
+            background-color: #eaeaea;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+        a {
+            color: #fff;
+        }
+        .middle {
+margin:1rem auto;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Back to Index</a>
+    </nav>
+    <main>
+        <h1>Chapter 10: JavaScript Arrays</h1>
+
+        <section>
+            <h2>Introduction to Arrays</h2>
+            <p>In JavaScript, arrays are used to store multiple values in a single variable. Arrays are a special type of object, and they come with a variety of methods to perform operations on them.</p>
+        </section>
+
+        <section>
+            <h2>Creating Arrays</h2>
+            <p>Arrays can be created using the array literal syntax or the <code>Array</code> constructor.</p>
+            <pre><code>// Array literal
+let fruits = ["Apple", "Banana", "Cherry"];
+
+// Array constructor
+let numbers = new Array(1, 2, 3, 4, 5);
+
+console.log(fruits); // Output: ["Apple", "Banana", "Cherry"]
+console.log(numbers); // Output: [1, 2, 3, 4, 5]</code></pre>
+        </section>
+
+        <section>
+            <h2>Accessing Array Elements</h2>
+            <p>Array elements are accessed using their index, which starts from 0.</p>
+            <pre><code>let fruits = ["Apple", "Banana", "Cherry"];
+console.log(fruits[0]); // Output: Apple
+console.log(fruits[2]); // Output: Cherry</code></pre>
+        </section>
+
+        <section>
+            <h2>Array Properties</h2>
+            <p>Arrays have properties that provide information about the array.</p>
+            <ul>
+                <li><code>length:</code> Returns the number of elements in the array.</li>
+            </ul>
+            <pre><code>let fruits = ["Apple", "Banana", "Cherry"];
+console.log(fruits.length); // Output: 3</code></pre>
+        </section>
+
+        <section>
+            <h2>Array Methods</h2>
+            <p>JavaScript provides various built-in methods to manipulate arrays.</p>
+
+            <h3>1. Adding and Removing Elements</h3>
+            <p><code>push(element):</code> Adds one or more elements to the end of the array and returns the new length.</p>
+            <p><code>pop():</code> Removes the last element from the array and returns it.</p>
+            <p><code>unshift(element):</code> Adds one or more elements to the beginning of the array and returns the new length.</p>
+            <p><code>shift():</code> Removes the first element from the array and returns it.</p>
+            <pre><code>let fruits = ["Apple", "Banana"];
+fruits.push("Cherry");
+console.log(fruits); // Output: ["Apple", "Banana", "Cherry"]
+
+let lastFruit = fruits.pop();
+console.log(lastFruit); // Output: Cherry
+console.log(fruits); // Output: ["Apple", "Banana"]
+
+fruits.unshift("Mango");
+console.log(fruits); // Output: ["Mango", "Apple", "Banana"]
+
+let firstFruit = fruits.shift();
+console.log(firstFruit); // Output: Mango
+console.log(fruits); // Output: ["Apple", "Banana"]</code></pre>
+
+            <h3>2. Combining and Slicing Arrays</h3>
+            <p><code>concat(array):</code> Merges two or more arrays and returns a new array.</p>
+            <p><code>slice(start, end):</code> Returns a shallow copy of a portion of an array into a new array object.</p>
+            <pre><code>let fruits = ["Apple", "Banana"];
+let moreFruits = ["Cherry", "Date"];
+let allFruits = fruits.concat(moreFruits);
+console.log(allFruits); // Output: ["Apple", "Banana", "Cherry", "Date"]
+
+let slicedFruits = allFruits.slice(1, 3);
+console.log(slicedFruits); // Output: ["Banana", "Cherry"]</code></pre>
+
+            <h3>3. Finding Elements</h3>
+            <p><code>indexOf(element):</code> Returns the first index at which a given element can be found in the array, or -1 if it is not present.</p>
+            <p><code>lastIndexOf(element):</code> Returns the last index at which a given element can be found in the array, or -1 if it is not present.</p>
+            <p><code>includes(element):</code> Determines whether an array includes a certain value among its entries, returning true or false.</p>
+            <pre><code>let fruits = ["Apple", "Banana", "Cherry", "Banana"];
+console.log(fruits.indexOf("Banana")); // Output: 1
+console.log(fruits.lastIndexOf("Banana")); // Output: 3
+console.log(fruits.includes("Cherry")); // Output: true</code></pre>
+
+            <h3>4. Iterating Over Arrays</h3>
+            <p><code>forEach(callback):</code> Executes a provided function once for each array element.</p>
+            <pre><code>let fruits = ["Apple", "Banana", "Cherry"];
+fruits.forEach(function(fruit) {
+    console.log(fruit);
+});
+// Output:
+// Apple
+// Banana
+// Cherry</code></pre>
+
+            <h3>5. Transforming Arrays</h3>
+            <p><code>map(callback):</code> Creates a new array with the results of calling a provided function on every element in the calling array.</p>
+            <pre><code>let numbers = [1, 2, 3, 4, 5];
+let doubled = numbers.map(function(number) {
+    return number * 2;
+});
+console.log(doubled); // Output: [2, 4, 6, 8, 10]</code></pre>
+
+            <h3>6. Filtering Arrays</h3>
+            <p><code>filter(callback):</code> Creates a new array with all elements that pass the test implemented by the provided function.</p>
+            <pre><code>let numbers = [1, 2, 3, 4, 5];
+let evenNumbers = numbers.filter(function(number) {
+    return number % 2 === 0;
+});
+console.log(evenNumbers); // Output: [2, 4]</code></pre>
+
+            <h3>7. Reducing Arrays</h3>
+            <p><code>reduce(callback, initialValue):</code> Executes a reducer function (that you provide) on each element of the array, resulting in a single output value.</p>
+            <pre><code>let numbers = [1, 2, 3, 4, 5];
+let sum = numbers.reduce(function(total, number) {
+    return total + number;
+}, 0);
+console.log(sum); // Output: 15</code></pre>
+        </section>
+
+        <section>
+            <h2>Advanced Topics</h2>
+            <p>In later sections, we will cover advanced topics such as multi-dimensional arrays, array destructuring, and using arrays with higher-order functions.</p>
+        </section>
+
+        <div class="middle">
+            <a href="chapter9.html">Previous</a>
+            <a href="chapter11.html">Next</a>
+        </div>
+    </main>
+</body>
+</html>
